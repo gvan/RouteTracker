@@ -1,8 +1,14 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.secrets.gradle)
+    alias(libs.plugins.kotlin.kapt)
 }
+
+val properties = Properties()
+properties.load(project.rootProject.file("secrets.properties").inputStream())
 
 android {
     namespace = "com.example.routetracker"
@@ -16,6 +22,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue(type = "string", name = "maps_api_key", value = properties.getProperty("MAPS_API_KEY", ""))
     }
 
     buildTypes {
@@ -36,6 +44,7 @@ android {
     }
     buildFeatures {
         buildConfig = true
+        dataBinding = true
     }
     secrets {
         propertiesFileName = "secrets.properties"
@@ -51,7 +60,17 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    // Google Map
     implementation(libs.com.google.android.gms.play.services.maps)
+    implementation(libs.com.google.maps.android.android.maps.utils)
+
+    // Koin
+    implementation(libs.koin.android)
+
+    // REST
+    implementation(libs.com.squareup.okhttp3.okhttp)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
