@@ -17,11 +17,14 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.max
+import kotlin.math.min
 
 class TrackerFragment : Fragment(), OnMapReadyCallback {
 
@@ -71,6 +74,25 @@ class TrackerFragment : Fragment(), OnMapReadyCallback {
                 }
                 val polyline = map?.addPolyline(polylineOptions)
                 polylines.add(polyline)
+
+                if (route.isNotEmpty()) {
+                    val origin = route.first()
+                    val destination = route.last()
+                    val northLat = max(origin.latitude, destination.latitude)
+                    val southLat = min(origin.latitude, destination.latitude)
+                    val eastLon = max(origin.longitude, destination.longitude)
+                    val westLon = min(origin.longitude, destination.longitude)
+                    val southwest = LatLng(southLat, westLon)
+                    val northeast = LatLng(northLat, eastLon)
+                    map?.moveCamera(
+                        CameraUpdateFactory.newLatLngBounds(
+                            LatLngBounds(
+                                southwest,
+                                northeast
+                            ), 100
+                        )
+                    )
+                }
             }
         }
         lifecycleScope.launch {
