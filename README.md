@@ -12,4 +12,4 @@ TrackerFragment. Display map with route and user positions.
 
 ## Screenshots
 
-![alt text](https://github.com/gvan/RouteTracker/blob/main/images/IMG_6211.jpg)
+![alt text](images/IMG_6211.jpg)
