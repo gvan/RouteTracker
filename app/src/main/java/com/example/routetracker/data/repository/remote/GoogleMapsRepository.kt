@@ -1,4 +1,4 @@
-package com.example.routetracker.data.repository
+package com.example.routetracker.data.repository.remote
 
 import com.example.routetracker.data.model.ComputeRoutesModel
 

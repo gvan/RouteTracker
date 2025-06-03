@@ -20,6 +20,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:inputType="text|textCapSentences"
+                android:imeOptions="actionNext"
                 android:hint="@string/origin_address"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -39,6 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:inputType="text|textCapSentences"
+                android:imeOptions="actionDone"
                 android:hint="@string/destination_address"/>
 
         </com.google.android.material.textfield.TextInputLayout>

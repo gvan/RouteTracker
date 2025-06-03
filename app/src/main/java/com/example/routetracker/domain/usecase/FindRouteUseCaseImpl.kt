@@ -1,6 +1,6 @@
 package com.example.routetracker.domain.usecase
 
-import com.example.routetracker.data.repository.GoogleMapsRepository
+import com.example.routetracker.data.repository.remote.GoogleMapsRepository
 import com.example.routetracker.domain.entity.RouteEntity
 import com.example.routetracker.domain.entity.UIResult
 import com.example.routetracker.domain.entity.toEntity

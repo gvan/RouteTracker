@@ -63,6 +63,7 @@ dependencies {
     // Google Map
     implementation(libs.com.google.android.gms.play.services.maps)
     implementation(libs.com.google.maps.android.android.maps.utils)
+    implementation(libs.com.google.android.gms.play.services.location)
 
     // Koin
     implementation(libs.koin.android)

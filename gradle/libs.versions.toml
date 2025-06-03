@@ -15,6 +15,7 @@ secretsGradle = "2.0.1"
 koin = "4.0.4"
 retrofit = "2.9.0"
 okhttp = "4.12.0"
+location = "21.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,6 +27,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 com-google-android-gms-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "googleMaps" }
+com-google-android-gms-play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "location" }
 com-google-maps-android-android-maps-utils ={ group = "com.google.maps.android", name = "android-maps-utils", version.ref = "androidMapsUtils" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
