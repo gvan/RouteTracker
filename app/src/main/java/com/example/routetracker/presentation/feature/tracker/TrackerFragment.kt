@@ -12,9 +12,11 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.example.routetracker.R
 import com.example.routetracker.databinding.FragmentRoutesBinding
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
 import kotlinx.coroutines.flow.collectLatest
@@ -84,6 +86,7 @@ class TrackerFragment : Fragment(), OnMapReadyCallback {
             isZoomControlsEnabled = true
             isZoomGesturesEnabled = true
         }
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(48.382778, 31.182233), 5f))
     }
 
 }
