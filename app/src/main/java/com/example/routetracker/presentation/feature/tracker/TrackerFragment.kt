@@ -70,7 +70,7 @@ class TrackerFragment : Fragment(), OnMapReadyCallback {
                 val polylineOptions = PolylineOptions().apply {
                     addAll(route)
                     color(Color.BLUE)
-                    width(16f)
+                    width(resources.getDimension(R.dimen.route_width))
                 }
                 val polyline = map?.addPolyline(polylineOptions)
                 polylines.add(polyline)
