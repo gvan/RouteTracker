@@ -1,6 +1,6 @@
 ## Description
 
-Application draws route according to entered locations and display positions passed by user.
+Application draws route according to entered locations and displays positions passed by user.
 
 ## Main components
 
